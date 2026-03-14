@@ -1,67 +1,45 @@
-const quizContainer = document.getElementById("quiz");
+const quizQuestions = [
 
-function loadQuiz(){
+{
+question: "What is 5 + 3 ?",
+options: ["6","7","8","9"],
+correct: 2,
+solution: "5 + 3 = 8"
+},
 
-quizQuestions.forEach((q,index)=>{
+{
+question: "Which is a vowel?",
+options: ["B","D","A","F"],
+correct: 2,
+solution: "A is a vowel"
+},
 
-let html = `<div class="question">
-<p>${index+1}. ${q.question}</p>`
+{
+question: "What is 10 - 4 ?",
+options: ["5","6","7","8"],
+correct: 1,
+solution: "10 - 4 = 6"
+},
 
-q.options.forEach((opt,i)=>{
+{
+question: "What is the name of the Fountain of Achiever’s school proprietor?",
+options: ["Mr Akinfolarin","Mr Pastor","Mrs Akinfolarin"],
+correct: 0,
+solution: "The proprietor is Mr Akinfolarin."
+},
 
-html += `
-<label>
-<input type="radio" name="q${index}" value="${i}">
-${opt}
-<span id="mark${index}${i}"></span>
-</label><br>
-`
-})
+{
+question: "What is the product of 15 and 2?",
+options: ["25","152","30"],
+correct: 2,
+solution: "15 × 2 = 30"
+},
 
-html += `<p id="sol${index}" class="solution"></p>`
-html += `</div>`
-
-quizContainer.innerHTML += html
-
-})
-
+{
+question: "What is the name of the Fountain of Achiever’s school proprietress?",
+options: ["Mr Akinfolarin","Mr Pastor","Mrs Akinfolarin"],
+correct: 2,
+solution: "The proprietress is Mrs Akinfolarin."
 }
 
-loadQuiz()
-
-function submitQuiz(){
-
-let score = 0
-
-quizQuestions.forEach((q,index)=>{
-
-let selected = document.querySelector(`input[name="q${index}"]:checked`)
-
-if(selected){
-
-let answer = parseInt(selected.value)
-
-if(answer === q.correct){
-
-score++
-
-document.getElementById(`mark${index}${answer}`).innerHTML=" ✔"
-
-}else{
-
-document.getElementById(`mark${index}${answer}`).innerHTML=" ✖"
-document.getElementById(`mark${index}${q.correct}`).innerHTML=" ✔"
-
-}
-
-}
-
-document.getElementById(`sol${index}`).innerHTML =
-"Solution: " + q.solution
-
-})
-
-document.getElementById("score").innerHTML =
-"Your Score: " + score + " / " + quizQuestions.length
-
-}
+];
