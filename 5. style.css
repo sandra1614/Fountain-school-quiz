@@ -1,13 +1,13 @@
 body{
-font-family:Arial;
+font-family: Arial;
 margin:40px;
+text-align:center;
 }
 
-.question{
-margin-bottom:25px;
+h1{
+color:darkblue;
 }
 
-.solution{
-color:blue;
-font-style:italic;
+h2{
+color:green;
 }
