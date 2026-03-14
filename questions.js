@@ -19,10 +19,7 @@ question: "What is 10 - 4 ?",
 options: ["5","6","7","8"],
 correct: 1,
 solution: "10 - 4 = 6"
-}
-
-];
-const quizQuestions = [
+},
 
 {
 question: "What is the name of the Fountain of Achiever’s school proprietor?",
